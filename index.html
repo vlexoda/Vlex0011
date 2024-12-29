@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Ad on Button Click</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .ad-container {
+            margin-top: 20px;
+            display: none; /* Hidden by default */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Ad Display Website</h1>
+    <p>Click the button below to show an ad.</p>
+    <button id="show-ad-btn">Show Ad</button>
+
+    <div class="ad-container" id="ad-container">
+        <!-- Google AdSense Ad Code -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-client="ca-pub-1234567890123456" <!-- Replace with your AdSense client ID -->
+             data-ad-slot="1234567890" <!-- Replace with your AdSense ad slot ID -->
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <script>
+        const showAdBtn = document.getElementById('show-ad-btn');
+        const adContainer = document.getElementById('ad-container');
+
+        // Show the ad container when the button is clicked
+        showAdBtn.addEventListener('click', () => {
+            adContainer.style.display = 'block'; // Show the ad
+        });
+    </script>
+</body>
+</html>
